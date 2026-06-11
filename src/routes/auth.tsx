@@ -7,13 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
-import { Compass, Loader2 } from "lucide-react";
+import { Briefcase, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Pathline" },
-      { name: "description", content: "Sign in to Pathline, your AI career coach." },
+      { title: "Sign in — WorkFlow AI" },
+      { name: "description", content: "Sign in to WorkFlow AI, your workplace productivity assistant." },
     ],
   }),
   component: AuthPage,
@@ -70,7 +70,7 @@ function AuthPage() {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md">
         <Link to="/" className="mb-8 flex items-center justify-center gap-2 text-foreground">
-          <Compass className="h-6 w-6 text-primary" />
+          <Briefcase className="h-6 w-6 text-primary" />
           <span className="text-xl font-semibold tracking-tight">Pathline</span>
         </Link>
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
