@@ -70,7 +70,7 @@ function AuthPage() {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md">
         <Link to="/" className="mb-8 flex items-center justify-center gap-2 text-foreground">
-          <Compass className="h-6 w-6 text-primary" />
+          <Briefcase className="h-6 w-6 text-primary" />
           <span className="text-xl font-semibold tracking-tight">Pathline</span>
         </Link>
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">

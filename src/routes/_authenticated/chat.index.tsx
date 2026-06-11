@@ -1,6 +1,6 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Compass, Sparkles, FileText, MessageCircle, Target } from "lucide-react";
+import { Bot, Sparkles, Mail, FileText, ListChecks, Search } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { createThread } from "@/lib/chat.functions";
@@ -11,10 +11,10 @@ export const Route = createFileRoute("/_authenticated/chat/")({
 });
 
 const STARTERS = [
-  { icon: FileText, title: "Review my resume", prompt: "Help me improve my resume. I'll share the role I'm targeting and my current bullets, and I want sharper, results-driven phrasing." },
-  { icon: MessageCircle, title: "Prepare for an interview", prompt: "Help me prepare for an upcoming interview. Ask me about the role, then walk me through likely questions using the STAR framework." },
-  { icon: Target, title: "Plan my next career move", prompt: "I'm thinking about my next career move. Ask me about my current role, what's working, what isn't, and my longer-term goals, then suggest options." },
-  { icon: Sparkles, title: "Explore a career change", prompt: "I'm considering changing careers. Help me explore options based on my skills, interests, and constraints." },
+  { icon: Mail, title: "Help me write an email", prompt: "Help me write a professional email. Ask me who it's for, the goal, and tone, then draft it." },
+  { icon: FileText, title: "Summarize meeting notes", prompt: "I'll paste raw meeting notes. Summarize them with key decisions, action items, and open questions." },
+  { icon: ListChecks, title: "Plan my week", prompt: "Help me plan my work week. Ask about my goals and current commitments, then suggest a prioritized plan." },
+  { icon: Search, title: "Research a work topic", prompt: "Research a topic for me at a professional level. Ask what I want to learn and the depth I need." },
 ];
 
 function ChatHome() {
@@ -40,11 +40,11 @@ function ChatHome() {
       <div className="mx-auto max-w-3xl px-6 py-16">
         <div className="text-center">
           <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary">
-            <Compass className="h-7 w-7" />
+            <Bot className="h-7 w-7" />
           </div>
-          <h1 className="text-3xl font-semibold tracking-tight">How can I help your career today?</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">How can I help you work smarter today?</h1>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-            Pathline is your AI career coach. Get help with resumes, interview prep, career changes, and workplace decisions.
+            Chat with your AI workplace assistant. For one-off generation, use the tools in the sidebar.
           </p>
         </div>
 
@@ -76,9 +76,9 @@ function ChatHome() {
         <div className="mt-12 rounded-xl border border-border bg-muted/30 p-4 text-xs text-muted-foreground">
           <p className="font-medium text-foreground">Responsible AI notice</p>
           <p className="mt-1">
-            Pathline uses AI to generate guidance based on your inputs. Responses may be inaccurate or
-            incomplete and should not replace advice from qualified career, legal, or mental-health professionals.
-            Avoid sharing sensitive personal information (government IDs, financial details).
+            WorkFlow AI generates responses using AI. Outputs may be inaccurate or incomplete and should not
+            replace expert advice (legal, financial, medical, HR). Avoid sharing sensitive personal data
+            (government IDs, banking, secrets) — always verify before acting on AI suggestions.
           </p>
         </div>
       </div>
