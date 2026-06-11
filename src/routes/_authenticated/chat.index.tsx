@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Bot, Sparkles, Mail, FileText, ListChecks, Search } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
